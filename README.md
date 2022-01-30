@@ -1,14 +1,17 @@
-#Spotify App
+Spotify App
+==================
 
 Aplicación para listar últimos lanzamientos en Spotify e información de artistas
 
-##Requisitos
+Requisitos
+----
 
 * PHP 7.4+
 * PHP cURL
 * Node with npm
 
-##Instalación
+Instalación
+----
 
 Ejecutar
 
@@ -24,7 +27,8 @@ Finalmente iniciar el servidor
 
     symfony server:start
 
-##Configuración
+Configuración
+----
 
 En la raiz del proyecto modificar los parámetros de session de spotify, Client Id y Client Secret (Los valores por defecto sirven para realizar pruebas)
 
@@ -33,7 +37,8 @@ SPOTIFY_CLIENT_ID=fad982f0a029456a966efd41e4f014ec
 SPOTIFY_CLIENT_SECRET=82825c82636c4054a8d05b467458fd9f
 ```
 
-##Uso
+Uso
+----
 
 La aplicación provee dos rutas para consumir información de Spotify.
 
