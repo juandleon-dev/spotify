@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <main>
+
+        <div class="album py-5 bg-light">
+            <div class="container js-spotify-app">
+
+                <div class="row">
+                    <div class="col-lg-8" id="artist" data-id="{{ id }}">
+                        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="" alt="">
+                        <h2></h2>
+                        <p></p>
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+                <h2>Top Tracks</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                        <tr>
+                            <th scope="col">Foto</th>
+                            <th scope="col">Album</th>
+                            <th scope="col">Canción</th>
+                        </tr>
+                        </thead>
+                        <tbody id="top-track-list">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+{% endblock %}
+
+    {% block javascripts %}
+        {{ parent() }}
+
+        <script>
+            $(document).ready(function() {
+                var $wrapper = $('.js-spotify-app');
+                var $id = $('#artist').attr('data-id');
+                var spotifyApp = new Artist($wrapper, $id);
+            });
+        </script>
+
+        <script type="text/template" id="js-artist-template">
+            <tr>
+                <td><img width="80" height="80" src="<%= image %>" alt=""></td>
+                <td><%= album %></td>
+                <td><%= song %></td>
+            </tr>
+        </script>
+    {% endblock %}

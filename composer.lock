@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c15baf05b286b6a72b67c219e884790e",
+    "content-hash": "994c1f6f96619d2d6dc3f61149861b68",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1514,6 +1514,72 @@
             "time": "2021-05-22T16:11:15+00:00"
         },
         {
+            "name": "friendsofsymfony/jsrouting-bundle",
+            "version": "2.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony/FOSJsRoutingBundle.git",
+                "reference": "c978fabc6a21a77052ff3fe927b41111ec944f0d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSJsRoutingBundle/zipball/c978fabc6a21a77052ff3fe927b41111ec944f0d",
+                "reference": "c978fabc6a21a77052ff3fe927b41111ec944f0d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1|^8.0",
+                "symfony/console": "~3.4|^4.4.20|^5.0",
+                "symfony/framework-bundle": "~3.4|^4.4.20|^5.0",
+                "symfony/serializer": "~3.4|^4.4.20|^5.0",
+                "willdurand/jsonp-callback-validator": "~1.1"
+            },
+            "require-dev": {
+                "symfony/expression-language": "~3.4|^4.4.20|^5.0",
+                "symfony/phpunit-bridge": "^5.3"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FOS\\JsRoutingBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "will+git@drnd.me"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/friendsofsymfony/FOSJsRoutingBundle/contributors"
+                }
+            ],
+            "description": "A pretty nice way to expose your Symfony2 routing to client applications.",
+            "homepage": "http://friendsofsymfony.github.com",
+            "keywords": [
+                "Js Routing",
+                "javascript",
+                "routing"
+            ],
+            "support": {
+                "issues": "https://github.com/FriendsOfSymfony/FOSJsRoutingBundle/issues",
+                "source": "https://github.com/FriendsOfSymfony/FOSJsRoutingBundle/tree/2.8.0"
+            },
+            "time": "2021-12-15T08:51:04+00:00"
+        },
+        {
             "name": "laminas/laminas-code",
             "version": "4.5.1",
             "source": {
@@ -2359,16 +2425,16 @@
         },
         {
             "name": "symfony/cache",
-            "version": "v5.4.2",
+            "version": "v5.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache.git",
-                "reference": "8aad4b69a10c5c51ab54672e78995860f5e447ec"
+                "reference": "4178f0a19ec3f1f76e7f1a07b8187cbe3d94b825"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache/zipball/8aad4b69a10c5c51ab54672e78995860f5e447ec",
-                "reference": "8aad4b69a10c5c51ab54672e78995860f5e447ec",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/4178f0a19ec3f1f76e7f1a07b8187cbe3d94b825",
+                "reference": "4178f0a19ec3f1f76e7f1a07b8187cbe3d94b825",
                 "shasum": ""
             },
             "require": {
@@ -2436,7 +2502,7 @@
                 "psr6"
             ],
             "support": {
-                "source": "https://github.com/symfony/cache/tree/v5.4.2"
+                "source": "https://github.com/symfony/cache/tree/v5.4.3"
             },
             "funding": [
                 {
@@ -2452,7 +2518,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-28T17:15:56+00:00"
+            "time": "2022-01-26T16:28:35+00:00"
         },
         {
             "name": "symfony/cache-contracts",
@@ -8058,6 +8124,50 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.10.0"
             },
             "time": "2021-03-09T10:59:23+00:00"
+        },
+        {
+            "name": "willdurand/jsonp-callback-validator",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/willdurand/JsonpCallbackValidator.git",
+                "reference": "1a7d388bb521959e612ef50c5c7b1691b097e909"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/willdurand/JsonpCallbackValidator/zipball/1a7d388bb521959e612ef50c5c7b1691b097e909",
+                "reference": "1a7d388bb521959e612ef50c5c7b1691b097e909",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JsonpCallbackValidator": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "william.durand1@gmail.com",
+                    "homepage": "http://www.willdurand.fr"
+                }
+            ],
+            "description": "JSONP callback validator.",
+            "support": {
+                "issues": "https://github.com/willdurand/JsonpCallbackValidator/issues",
+                "source": "https://github.com/willdurand/JsonpCallbackValidator/tree/master"
+            },
+            "time": "2014-01-20T22:35:06+00:00"
         }
     ],
     "packages-dev": [

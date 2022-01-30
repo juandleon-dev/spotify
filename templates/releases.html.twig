@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <main>
+
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">SPOTIFY</h1>
+                    <p class="lead text-muted">Ultimos Lanzamientos</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="album py-5 bg-light">
+            <div class="container js-spotify-app">
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="card-container">
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+{% endblock %}
+
+    {% block javascripts %}
+        {{ parent() }}
+
+        <script>
+            $(document).ready(function() {
+                var $wrapper = $('.js-spotify-app');
+                var spotifyApp = new SpotifyApp($wrapper);
+            });
+        </script>
+
+        <script type="text/template" id="js-album-template">
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="<%= image %>" alt="">
+                    <div class="card-body">
+                        <p class="card-text"><%= name %></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <% _.each(artists, function(artist){ %>
+                                <a class="" href="<%= _.escape(artist.url) %>"><%= _.escape(artist.name) %></a>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+    {% endblock %}
