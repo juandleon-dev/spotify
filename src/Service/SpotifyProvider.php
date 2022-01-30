@@ -45,6 +45,7 @@ class SpotifyProvider implements musicProvider
      * @throws ClientExceptionInterface
      * @throws RedirectionExceptionInterface
      * @throws ServerExceptionInterface
+     * @throws Exception\InvalidToken
      */
     public function lastReleases(): array
     {
@@ -84,6 +85,7 @@ class SpotifyProvider implements musicProvider
      * @throws ClientExceptionInterface
      * @throws TransportExceptionInterface
      * @throws ServerExceptionInterface
+     * @throws Exception\InvalidToken
      */
     public function artist(string $id): array
     {
@@ -110,6 +112,7 @@ class SpotifyProvider implements musicProvider
      * @throws ClientExceptionInterface
      * @throws TransportExceptionInterface
      * @throws ServerExceptionInterface
+     * @throws Exception\InvalidToken
      */
     public function artistTopTracks(string $id): array
     {

@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
+use App\Service\Exception\InvalidToken;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
@@ -55,10 +56,13 @@ class Session
         return json_decode($request->getContent(), true);
     }
 
+    /**
+     * @throws InvalidToken
+     */
     public static function authorizationHeader(array $token): string
     {
-        if (null === $token['token_type'] || null === $token['access_token']) {
-            // todo throw exception
+        if (!isset($token['token_type']) || !isset($token['access_token'])) {
+            throw new InvalidToken();
         }
 
         return sprintf('Authorization: %s %s', $token['token_type'], $token['access_token']);
