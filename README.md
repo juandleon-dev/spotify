@@ -30,7 +30,7 @@ Finalmente iniciar el servidor
 Configuración
 ----
 
-En la raiz del proyecto modificar los parámetros de session de spotify, Client Id y Client Secret (Los valores por defecto sirven para realizar pruebas)
+En la raiz del proyecto modificar las variables de entorno de session de spotify, Client Id y Client Secret (Los valores por defecto sirven para realizar pruebas) en el fichero .env:
 
 ```dotenv
 SPOTIFY_CLIENT_ID=fad982f0a029456a966efd41e4f014ec
