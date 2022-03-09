@@ -1,14 +1,13 @@
 Spotify App
 ==================
 
-Aplicación para listar últimos lanzamientos en Spotify e información de artistas
+API para consultar discografía por artista desde spotify
 
 Requisitos
 ----
 
 * PHP 7.4+
 * PHP cURL
-* Node with npm
 
 Instalación
 ----
@@ -16,12 +15,6 @@ Instalación
 Ejecutar
 
     composer install 
-
-Luego de esto, ejecutar las dependencias para ejecutar webpack
-
-    npm install
-    
-    npm run build
 
 Finalmente iniciar el servidor 
 
@@ -40,15 +33,30 @@ SPOTIFY_CLIENT_SECRET=82825c82636c4054a8d05b467458fd9f
 Uso
 ----
 
-La aplicación provee dos rutas para consumir información de Spotify.
+Acceder a la documentación de los Endpoints
 
-Lanzamientos que lista los ultimos lanzamientos en spotify
+    http://localhost:8000/api/
 
-    http://127.0.0.1:8000/lanzamientos
+Buscar la lista de albums por artista
 
-Artista que mostrará información detallada del artista. {id} será el identificador único de Spotify del artista. Se acceden desde el link en la lista de lanzamientos
+    http://localhost:8000/api/v1/albums?q=<band-name>
 
-    http://127.0.0.1:8000/artista/{id}
+El API soporta el formato jsonld por lo que si se requiere información mas detallada de la petición se debera agregar la extension
+
+    http://localhost:8000/api/v1/albums.jsonld?q=<band-name>
+
+Para obtener información en el formato json
+
+    http://localhost:8000/api/v1/albums.json?q=<band-name>
+
+Se puede controlar el limite de items esperados y la página a traves de los parametros limit y page:
+
+    http://localhost:8000/api/v1/albums.json?q=<band-name>&limit=<limit-per-page>&page=<page>
 
 
+Test
+----
 
+Se han implementado test Unitarios, para ejecutarlos desde la consola ejecutar:
+
+    php bin\phpunit
