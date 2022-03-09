@@ -8,6 +8,7 @@ Requisitos
 
 * PHP 7.4+
 * PHP cURL
+* Node with npm
 
 Instalación
 ----
@@ -15,6 +16,12 @@ Instalación
 Ejecutar
 
     composer install 
+
+Luego de esto, ejecutar las dependencias para ejecutar webpack
+
+    npm install
+    
+    npm run build
 
 Finalmente iniciar el servidor 
 
