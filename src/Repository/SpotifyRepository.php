@@ -40,9 +40,13 @@ class SpotifyRepository implements musicRepository
      * @throws ServerExceptionInterface
      * @throws InvalidToken
      */
-    public function searchAlbumsByArtist(string $artist): array
+    public function searchAlbumsByArtist(string $artist, int $limit = 20, $page = 1): array
     {
         $uri = str_replace('{artist}', $artist, self::URI_SEARCH);
+
+        $offset = ($limit * ($page - 1)) + 1;
+        $uri = sprintf('%s&limit=%s&offset=%s', $uri, $limit, $offset);
+
         $response = $this->client->request(
             Request::METHOD_GET,
             sprintf('%s%s', $this->spotifyUrlRequest, $uri),
