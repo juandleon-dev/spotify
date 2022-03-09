@@ -15,7 +15,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *              "method"="GET",
  *              "controller"=NotFoundAction::class,
  *              "read"=false,
- *              "outpou"=false
+ *              "output"=false
  *          }
  *     },
  *     normalizationContext={"groups"="album:read"},
